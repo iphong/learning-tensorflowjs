@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TensorFlow.js</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <!-- S01/S02 Load Models -->
+<!--   
+    <h1>TensorFlow.js</h1>
+    <img id="exampleImg" width="640" height="360" crossorigin src="https://storage.googleapis.com/jmstore/TensorFlowJS/EdX/standing.jpg" /> 
+  -->
+
+  <!-- S06 Model Classification -->
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      margin: 2em;
+    }
+
+    h1 {
+      font-style: italic;
+      color: #FF6F00;
+    }
+
+    canvas {
+      display: block;
+      width: 28px;
+      height: 28px;
+      margin: 10px auto 5px auto;
+      zoom: 4;
+      background-color: #000;
+    }
+
+    p#prediction {
+      font-size: 20pt;
+      margin: 10px;
+      text-align: center;
+    }
+
+    p#prediction.correct {
+      border: 3px solid #00ff00;
+      color: #00ff00;
+      font-size: 100pt;
+    }
+
+    p#prediction.wrong {
+      border: 3px solid #ff0000;
+      color: #ff0000;
+      font-size: 100pt;
+    }
+
+    p {
+      margin: 5px;
+    }
+
+    .box {
+      width: 45%;
+      margin: 1%;
+      border: 1px dashed #cdcdcd;
+      display: inline-block;
+      min-height: 400px;
+      text-align: center;
+    }
+  </style>
+  <h1>TensorFlow.js MNIST classifier</h1>
+  <p>See console for even more outputs.</p>
+  <section class="box">
+    <h2>Input Image</h2>
+    <p>Input image is a 28x28 pixel greyscale image from MNIST dataset - a real hand drawn digit!</p>
+    <canvas id="canvas" width="28" height="28"></canvas>
+    <button id="clear">Clear</button>
+  </section>
+  <section class="box">
+    <h2>Prediction</h2>
+    <p>Below you see what number the trained TensorFlow.js model has predicted from the input image.</p>
+    <p>Red is a wrong prediction, Green is a correct one.</p>
+    <p id="prediction">Training model. Please wait...</p>
+  </section>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>

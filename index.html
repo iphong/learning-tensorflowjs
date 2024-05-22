@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>TensorFlow.js</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>  
-  <body>
-    <script type="module" src="src/main.js"></script>
-  </body>
+
+<head>
+  <title>TensorFlow.js</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      margin: 2em;
+    }
+
+    h1 {
+      font-style: italic;
+      color: #FF6F00;
+    }
+
+    canvas {
+      display: block;
+      width: 28px;
+      height: 28px;
+      margin: 10px auto 5px auto;
+      zoom: 4;
+      background-color: #000;
+    }
+
+    p#prediction {
+      font-size: 20pt;
+      margin: 10px;
+      text-align: center;
+    }
+
+    p#prediction.correct {
+      border: 3px solid #00ff00;
+      color: #00ff00;
+      font-size: 100pt;
+    }
+
+    p#prediction.wrong {
+      border: 3px solid #ff0000;
+      color: #ff0000;
+      font-size: 100pt;
+    }
+
+    p {
+      margin: 5px;
+    }
+
+    .box {
+      width: 45%;
+      margin: 1%;
+      border: 1px dashed #cdcdcd;
+      display: inline-block;
+      min-height: 400px;
+      text-align: center;
+    }
+  </style>
+  <h1>TensorFlow.js Fashion MNIST classifier</h1>
+  <p>This experiment shows how you can use the power of Machine Learning directly in your browser to train and use a
+    more advanced Convolutional Neural Network to classify clothing items from the Fashion MNIST dataset. Warning
+    training is slow in browser, ideally you would do this in Node. js with CUDA installed for faster training. In the
+    browser without CUDA it will take about 5 mins to train, and then inference will be super fast :-)</p>
+  <section class="box">
+    <h2>Input Image</h2>
+    <p>Input image is a 28x28 pixel greyscale image from MNIST dataset - a real hand drawn digit!</p>
+    <canvas id="canvas" width="28" height="28"></canvas>
+  </section>
+  <section class="box">
+    <h2>Prediction</h2>
+    <p>Below you see what item the trained TensorFlow.js model has predicted from the input image.</p>
+    <p>It should get it right most of the time, but of course it's not perfect, so there will be times when it doesn't.
+      Red is a wrong prediction, Green is a correct one.</p>
+    <p id="prediction">Training model. Please wait. This can take ~5 minutes. Check console for progress (30epochstotal)
+    </p>
+  </section>
+  <script type="module" src="src/main.js"></script>
+</body>
+
 </html>
